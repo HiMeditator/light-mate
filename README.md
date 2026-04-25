@@ -1,4 +1,5 @@
 <div align="center" >
+    <img src="assets/icons/light-mate.png" width="100px" height="100px"/>
     <h1 align="center">Light Mate</h1>
     <p>A lightweight LLM agent extension for VS Code, handling lightweight tasks with less token cost.</p>
     <p>
