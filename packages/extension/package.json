@@ -10,7 +10,7 @@
     "Other"
   ],
   "activationEvents": [],
-  "main": "./dist/extension.js",
+  "main": "./dist/extension/extension.js",
   "contributes": {
     "commands": [
       {
@@ -28,7 +28,8 @@
     "watch-tests": "tsc -p . -w --outDir out",
     "pretest": "pnpm run compile-tests && pnpm run compile && pnpm run lint",
     "lint": "eslint src",
-    "test": "vscode-test"
+    "test": "vscode-test",
+    "vsce:package": "vsce package --no-dependencies"
   },
   "devDependencies": {
     "@types/vscode": "^1.116.0",
