@@ -1,23 +1,63 @@
 {
   "name": "light-mate",
   "displayName": "Light Mate",
-  "description": "",
+  "publisher": "himeditator",
+  "icon": "assets/light-mate.png",
+  "description": "A lightweight LLM agent extension for VS Code, handling lightweight tasks with less token cost.",
   "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HiMeditator/light-mate"
+  },
+  "homepage": "https://github.com/HiMeditator/light-mate",
+  "bugs": {
+    "url": "https://github.com/HiMeditator/light-mate/issues"
+  },
+  "qna": "https://github.com/HiMeditator/light-mate/issues",
+  "license": "MIT",
   "engines": {
-    "vscode": "^1.116.0"
+    "vscode": "^1.80.0"
+  },
+  "galleryBanner": {
+    "color": "#1A1A1A",
+    "theme": "dark"
   },
   "categories": [
-    "Other"
+    "AI",
+    "Chat",
+    "Education",
+    "Machine Learning"
+  ],
+  "keywords": [
+    "copilot",
+    "agent",
+    "openai",
+    "ollama",
+    "chat",
+    "LLM"
   ],
   "activationEvents": [],
   "main": "./dist/extension/extension.js",
   "contributes": {
-    "commands": [
-      {
-        "command": "light-mate.helloWorld",
-        "title": "Hello World"
-      }
-    ]
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "light-mate",
+          "title": "%plugin.name%",
+          "icon": "assets/light-mate-sidebar.png"
+        }
+      ]
+    },
+    "views": {
+      "light-mate": [
+        {
+          "type": "webview",
+          "id": "light-mate.chat",
+          "name": "%plugin.name%",
+          "icon": "assets/icons/light-mate-sidebar.png"
+        }
+      ]
+    }
   },
   "scripts": {
     "vscode:prepublish": "pnpm run package",
@@ -32,16 +72,16 @@
     "vsce:package": "vsce package --no-dependencies"
   },
   "devDependencies": {
-    "@types/vscode": "^1.116.0",
     "@types/mocha": "^10.0.10",
-    "@types/node": "22.x",
-    "typescript-eslint": "^8.56.1",
-    "eslint": "^9.39.3",
-    "typescript": "^5.9.3",
-    "ts-loader": "^9.5.4",
-    "webpack": "^5.105.3",
-    "webpack-cli": "^6.0.1",
+    "@types/node": "~22.19.17",
+    "@types/vscode": "^1.80.0",
     "@vscode/test-cli": "^0.0.12",
-    "@vscode/test-electron": "^2.5.2"
+    "@vscode/test-electron": "^2.5.2",
+    "eslint": "^9.39.3",
+    "ts-loader": "^9.5.4",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.56.1",
+    "webpack": "^5.105.3",
+    "webpack-cli": "^6.0.1"
   }
 }
