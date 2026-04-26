@@ -1,4 +1,5 @@
 <div align="center" >
+    <img src="assets/icons/light-mate.png" width="100px" height="100px"/>
     <h1 align="center">Light Mate</h1>
     <p>面向 VS Code 的轻量级大模型智能体插件，用更小的 Token 消耗完成轻量级任务。</p>
     <p>

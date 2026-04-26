@@ -4,10 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "pnpm run -F gui dev",
+    "build": "pnpm run -F gui build",
+    "watch": "pnpm run -F light-mate watch",
+    "package": "pnpm run -F light-mate vsce:package"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "himeditator",
+  "license": "MIT",
   "packageManager": "pnpm@10.7.0"
 }
