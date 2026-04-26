@@ -1,5 +1,6 @@
 import * as vscode from 'vscode';
 import { MessageSender } from './MessageSender';
+import { Configuration } from '../api/Configuration';
 
 export class RequestHandler {
 
@@ -7,22 +8,13 @@ export class RequestHandler {
         console.log('[Extension Receive]', message);
         switch (message.command) {
             case 'init.ready':
-                RequestHandler.prepareInit();
+                RequestHandler.initReady();
                 break;
         }
     }
 
-    private static prepareInit() {
-        MessageSender.view?.webview.postMessage({
-            command: 'data.test',
-            data: {
-                "info": "Data Communication Test",
-                "array": [0, 1, 2, 3],
-                "object": {
-                    "name": "Light Mate",
-                    "version": "0.0.1" 
-                }
-            }
-        });
+    private static initReady() {
+        MessageSender.languageSet();
+        MessageSender.configurationUpdate(Configuration.getSharedConfiguration());
     }
 }

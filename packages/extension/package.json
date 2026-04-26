@@ -43,7 +43,7 @@
       "activitybar": [
         {
           "id": "light-mate",
-          "title": "%plugin.name%",
+          "title": "%extension.name%",
           "icon": "assets/light-mate-sidebar.png"
         }
       ]
@@ -53,10 +53,67 @@
         {
           "type": "webview",
           "id": "light-mate.chat",
-          "name": "%plugin.name%",
+          "name": "%extension.name%",
           "icon": "assets/icons/light-mate-sidebar.png"
         }
       ]
+    },
+    "commands": [
+      {
+        "command": "light-mate.goto.settings",
+        "title": "%cmd.goto.settings%",
+        "icon": "$(gear)"
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "light-mate.goto.settings",
+          "when": "view == light-mate.chat",
+          "group": "navigation@1"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "%extension.name%",
+      "properties": {
+        "lightMate.sendRequestShortcut": {
+          "type": "string",
+          "enum": [
+            "Ctrl+Enter",
+            "Enter"
+          ],
+          "default": "Ctrl+Enter",
+          "markdownDescription": "%desc.sendRequestShortcut%",
+          "order": 0
+        },
+        "lightMate.codeHighlightTheme": {
+          "type": "string",
+          "enum": [
+            "github",
+            "arduino-light",
+            "qtcreator-light",
+            "androidstudio",
+            "github-dark",
+            "github-dark-dimmed"
+          ],
+          "default": "github",
+          "markdownDescription": "%desc.codeHighlightTheme%",
+          "order": 1
+        },
+        "lightMate.chat.useDefaultSystemPrompt": {
+          "type": "boolean",
+          "default": true,
+          "markdownDescription": "%desc.chat.useDefaultSystemPrompt%",
+          "order": 100
+        },
+        "lightMate.chat.continuousChat": {
+          "type": "boolean",
+          "default": true,
+          "markdownDescription": "%desc.chat.continuousChat%",
+          "order": 101
+        }
+      }
     }
   },
   "scripts": {
