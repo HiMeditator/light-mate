@@ -1,5 +1,5 @@
 <template>
-  <h1>Light Mate</h1>
+
 </template>
 
 <script setup lang="ts">
