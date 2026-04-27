@@ -1,3 +1,11 @@
 {
-    "plugin.name": "Light Mate"
+    "extension.name": "Light Mate",
+
+    "cmd.settings.open": "Open Settings",
+    "cmd.config.open": "Open Config",
+
+    "desc.sendRequestShortcut": "Set the shortcut key for sending message.",
+    "desc.codeHighlightTheme": "Set the theme for code highlighting. **This will take effect after restarting the plugin.**",
+    "desc.chat.useDefaultSystemPrompt": "Whether to use the default system prompt. If the user has not defined a system prompt for the current model and this option is enabled, the extension's system prompt will be used.",
+    "desc.chat.continuousChat": "Whether to enable continuous chat. If enabled, the model will retrieve the entire chat session history, but it will consume more input `tokens`. If disabled, the model will only receive the current request content and lose the memory of the ongoing chat."
 }

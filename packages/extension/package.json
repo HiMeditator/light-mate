@@ -43,7 +43,7 @@
       "activitybar": [
         {
           "id": "light-mate",
-          "title": "%plugin.name%",
+          "title": "%extension.name%",
           "icon": "assets/light-mate-sidebar.png"
         }
       ]
@@ -53,10 +53,77 @@
         {
           "type": "webview",
           "id": "light-mate.chat",
-          "name": "%plugin.name%",
+          "name": "%extension.name%",
           "icon": "assets/icons/light-mate-sidebar.png"
         }
       ]
+    },
+    "commands": [
+      {
+        "command": "light-mate.settings.open",
+        "title": "%cmd.settings.open%",
+        "icon": "$(gear)"
+      },
+      {
+        "command": "light-mate.config.open",
+        "title": "%cmd.config.open%",
+        "icon": "$(json)"
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "light-mate.settings.open",
+          "when": "view == light-mate.chat",
+          "group": "navigation@2"
+        },
+        {
+          "command": "light-mate.config.open",
+          "when": "view == light-mate.chat",
+          "group": "navigation@1"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "%extension.name%",
+      "properties": {
+        "lightMate.sendRequestShortcut": {
+          "type": "string",
+          "enum": [
+            "Ctrl+Enter",
+            "Enter"
+          ],
+          "default": "Ctrl+Enter",
+          "markdownDescription": "%desc.sendRequestShortcut%",
+          "order": 0
+        },
+        "lightMate.codeHighlightTheme": {
+          "type": "string",
+          "enum": [
+            "github",
+            "arduino-light",
+            "qtcreator-light",
+            "androidstudio",
+            "github-dark",
+            "github-dark-dimmed"
+          ],
+          "default": "github",
+          "markdownDescription": "%desc.codeHighlightTheme%",
+          "order": 1
+        },
+        "lightMate.chat.useDefaultSystemPrompt": {
+          "type": "boolean",
+          "default": true,
+          "markdownDescription": "%desc.chat.useDefaultSystemPrompt%",
+          "order": 100
+        },
+        "lightMate.chat.continuousChat": {
+          "type": "boolean",
+          "default": true,
+          "markdownDescription": "%desc.chat.continuousChat%",
+          "order": 101
+        }
+      }
     }
   },
   "scripts": {
@@ -83,5 +150,10 @@
     "typescript-eslint": "^8.56.1",
     "webpack": "^5.105.3",
     "webpack-cli": "^6.0.1"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.91.1",
+    "ollama": "^0.6.3",
+    "openai": "^6.34.0"
   }
 }
