@@ -1,2 +1,2 @@
-export * from './GlobalConfig';
+export * from './ExtensionPath';
 export * from './GlobalContext';

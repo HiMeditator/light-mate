@@ -1,7 +1,8 @@
 {
     "extension.name": "轻伴",
 
-    "cmd.goto.settings": "设置",
+    "cmd.settings.open": "设置",
+    "cmd.config.open": "配置文件",
 
     "desc.sendRequestShortcut": "设置发送消息的快捷键。",
     "desc.codeHighlightTheme": "设置代码高亮的主题。**重启插件后生效。**",

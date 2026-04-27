@@ -1,7 +1,8 @@
 {
     "extension.name": "Light Mate",
 
-    "cmd.goto.settings": "Open Settings",
+    "cmd.settings.open": "Open Settings",
+    "cmd.config.open": "Open Config",
 
     "desc.sendRequestShortcut": "Set the shortcut key for sending message.",
     "desc.codeHighlightTheme": "Set the theme for code highlighting. **This will take effect after restarting the plugin.**",

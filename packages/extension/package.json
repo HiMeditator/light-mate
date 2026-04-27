@@ -60,15 +60,25 @@
     },
     "commands": [
       {
-        "command": "light-mate.goto.settings",
-        "title": "%cmd.goto.settings%",
+        "command": "light-mate.settings.open",
+        "title": "%cmd.settings.open%",
         "icon": "$(gear)"
+      },
+      {
+        "command": "light-mate.config.open",
+        "title": "%cmd.config.open%",
+        "icon": "$(json)"
       }
     ],
     "menus": {
       "view/title": [
         {
-          "command": "light-mate.goto.settings",
+          "command": "light-mate.settings.open",
+          "when": "view == light-mate.chat",
+          "group": "navigation@2"
+        },
+        {
+          "command": "light-mate.config.open",
           "when": "view == light-mate.chat",
           "group": "navigation@1"
         }
@@ -140,5 +150,10 @@
     "typescript-eslint": "^8.56.1",
     "webpack": "^5.105.3",
     "webpack-cli": "^6.0.1"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.91.1",
+    "ollama": "^0.6.3",
+    "openai": "^6.34.0"
   }
 }

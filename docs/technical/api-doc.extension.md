@@ -33,10 +33,20 @@
 
 - `configuration: SharedConfiguration` 设置信息的字符串
 
-## 前端 => 插件
 
-### `init.ready`
+### `models.update`
 
-前端组件挂载完成后发送，表示可以正常接收数据了
+更新模型列表和当前选择的模型的 ID
 
-无参数
+参数：
+
+- `models: ModelDisplay[]` 模型展示列表
+- `modelID: string` 当前选择的模型的 ID
+
+### `modelID.update`
+
+插件端确认了新选择的模型的 ID，通知前端更新
+
+参数：
+
+- `modelID: string` 新选择的模型 ID

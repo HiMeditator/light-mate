@@ -5,8 +5,8 @@ import { registerListeners } from './core/init/registerListeners';
 import { registerCommands } from './core/init/registerCommands';
 
 
-export function activate(context: vscode.ExtensionContext) {
-    initModules(context);
+export async function activate(context: vscode.ExtensionContext) {
+    await initModules(context);
     registerViews(context);
     registerListeners(context);
     registerCommands(context);
